@@ -5,6 +5,9 @@
         "ios": "cpp",
         "iostream": "cpp",
         "iomanip": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "xlocale": "cpp",
+        "cmath": "cpp",
+        "ostream": "cpp"
     }
 }
