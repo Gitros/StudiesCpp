@@ -1,13 +1,12 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
 int main()
 {
-    double pi = M_PI;
-
-    cout << "The value of pi is " << pi << endl;
+    cout << "Pierwiastek kwadratowy z pi z dokładnością do 2 miejsc po przecinku: " << fixed << setprecision(2) << sqrt(M_PI) << endl;
 
     return 0;
 }
