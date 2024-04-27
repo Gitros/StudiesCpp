@@ -6,22 +6,26 @@ using namespace std;
 
 int main()
 {
-    float x, y;
+    int a, b, c;
 
-    cout << "Podaj liczbę x ";
-    cin >> x;
-    cout << "Podaj liczbę y ";
-    cin >> y;
+    cout << "Program sprawdza czy boki a, b i c tworzą trójkąt prostokątny." << endl;
+    cout << "Podaj bok a." << endl;
+    cin >> a;
+    cout << "Podaj bok b." << endl;
+    cin >> b;
+    cout << "Podaj bok c." << endl;
+    cin >> c;
 
-    float suma = x + y;
-    float roznica = x - y;
-    float iloczyn = x * y;
-    float iloraz = x / y;
-
-    cout << "Suma x i y " << fixed << setprecision(2) << suma << endl;
-    cout << "Roznica x i y " << fixed << setprecision(2) << roznica << endl;
-    cout << "Ilocyn x i y " << fixed << setprecision(2) << iloczyn << endl;
-    cout << "Iloraz x i y " << fixed << setprecision(2) << iloraz << endl;
+    if ((a * a + b * b) == (c * c))
+    {
+        cout << "Boki a = " << a << ", b = " << b << " i c = " << c;
+        cout << " tworzą trójkąt prostokątny." << endl;
+    }
+    else
+    {
+        cout << "Boki a = " << a << ", b = " << b << " i c = " << c;
+        cout << " nie tworzą trójkąta prostokątnego." << endl;
+    }
 
     return 0;
 }
