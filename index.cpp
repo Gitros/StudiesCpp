@@ -3,14 +3,28 @@
 
 using namespace std;
 
-int ileCyfr(int liczba)
+bool pierwsza(int liczba)
 {
-    if (liczba == 0)
+    if (liczba <= 1)
     {
-        return 1;
+        return false;
     }
-
-    return log10(abs(liczba)) + 1;
+    if (liczba == 2)
+    {
+        return true;
+    }
+    if (liczba % 2 == 0)
+    {
+        return false;
+    }
+    for (int i = 3; i <= sqrt(liczba); i += 2)
+    {
+        if (liczba % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
 }
 
 int main()
@@ -20,9 +34,14 @@ int main()
     cout << "Podaj liczbę: ";
     cin >> liczba;
 
-    int liczbaCyfr = ileCyfr(liczba);
-
-    cout << "Liczba " << liczba << " jest " << liczbaCyfr << "-cyfrowa." << endl;
+    if (pierwsza(liczba))
+    {
+        cout << "Liczba " << liczba << " jest liczbą pierwszą." << endl;
+    }
+    else
+    {
+        cout << "Liczba " << liczba << " nie jest liczbą pierwszą." << endl;
+    }
 
     return 0;
 }
