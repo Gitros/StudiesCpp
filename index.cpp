@@ -4,26 +4,24 @@ using namespace std;
 int main()
 {
     int n;
-    cout << "Podaj liczbę całkowitą: ";
+    cout << "Podaj liczbę naturalną: ";
     cin >> n;
 
-    int suma = 0;
-    if (n > 0)
+    if (n <= 0)
     {
-        for (int i = 1; i <= n; ++i)
-        {
-            suma += i;
-        }
-    }
-    else if (n < 0)
-    {
-        for (int i = n; i <= 1; ++i)
-        {
-            suma += i;
-        }
+        cout << "Podana liczba musi być naturalna (większa od zera)." << endl;
+        return 1;
     }
 
-    cout << "Suma liczb od 1 do " << n << " wynosi: " << suma << endl;
+    cout << "Dzielniki liczby " << n << " to: ";
+    for (int i = 1; i <= n; ++i)
+    {
+        if (n % i == 0)
+        {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
 
     return 0;
 }
