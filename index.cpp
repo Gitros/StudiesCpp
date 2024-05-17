@@ -1,19 +1,26 @@
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
     int n;
-    cout << "Podaj liczbę naturalną dodatnią: ";
+    cout << "Podaj liczbę całkowitą: ";
     cin >> n;
 
-    if (n <= 0) {
-        cout << "Liczba musi być dodatnia i większa od zera." << endl;
-        return 1;
-    }
-
     int suma = 0;
-    for (int i = 1; i <= n; ++i) {
-        suma += i;
+    if (n > 0)
+    {
+        for (int i = 1; i <= n; ++i)
+        {
+            suma += i;
+        }
+    }
+    else if (n < 0)
+    {
+        for (int i = n; i <= 1; ++i)
+        {
+            suma += i;
+        }
     }
 
     cout << "Suma liczb od 1 do " << n << " wynosi: " << suma << endl;
