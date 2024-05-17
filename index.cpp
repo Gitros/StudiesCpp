@@ -4,24 +4,46 @@ using namespace std;
 int main()
 {
     int n;
-    cout << "Podaj liczbę naturalną: ";
+    cout << "Podaj liczbę naturalną n: ";
     cin >> n;
 
-    if (n <= 0)
+    for (int i = 0; i < n; ++i)
     {
-        cout << "Podana liczba musi być naturalna (większa od zera)." << endl;
-        return 1;
+        for (int j = 0; j < 2 * n + 1; ++j)
+        {
+            if (j >= n - i && j <= n + i)
+            {
+                cout << '*';
+            }
+            else
+            {
+                cout << ' ';
+            }
+        }
+        cout << endl;
     }
 
-    cout << "Dzielniki liczby " << n << " to: ";
-    for (int i = 1; i <= n; ++i)
+    for (int j = 0; j < 2 * n + 1; ++j)
     {
-        if (n % i == 0)
-        {
-            cout << i << " ";
-        }
+        cout << '*';
     }
     cout << endl;
+
+    for (int i = n - 1; i >= 0; --i)
+    {
+        for (int j = 0; j < 2 * n + 1; ++j)
+        {
+            if (j >= n - i && j <= n + i)
+            {
+                cout << '*';
+            }
+            else
+            {
+                cout << ' ';
+            }
+        }
+        cout << endl;
+    }
 
     return 0;
 }
